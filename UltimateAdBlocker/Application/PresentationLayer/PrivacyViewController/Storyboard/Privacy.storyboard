@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oDJ-dE-c8r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wk Web Support View Controller-->
+        <scene sceneID="JAE-Df-Prg">
+            <objects>
+                <viewController id="Oqd-Bt-Dd0" customClass="WkWebSupportViewController" customModule="SecurityShield" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r9f-JL-6Zs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFG-IG-2G6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rbb-qF-wRi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="XFG-IG-2G6" secondAttribute="bottom" id="3FZ-hZ-zHf"/>
+                            <constraint firstItem="XFG-IG-2G6" firstAttribute="trailing" secondItem="Rbb-qF-wRi" secondAttribute="trailing" id="eVx-IK-VZW"/>
+                            <constraint firstItem="XFG-IG-2G6" firstAttribute="leading" secondItem="Rbb-qF-wRi" secondAttribute="leading" id="gdQ-jn-YYc"/>
+                            <constraint firstItem="XFG-IG-2G6" firstAttribute="top" secondItem="r9f-JL-6Zs" secondAttribute="top" id="x6d-JJ-OZc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="XFG-IG-2G6" id="8fB-KW-2VE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ywp-EY-XH9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741" y="110"/>
+        </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="szU-Mx-dAU">
+            <objects>
+                <viewController id="oDJ-dE-c8r" customClass="PrivacyViewController" customModule="AdBlockProtect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LLS-0H-0fE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rx-mY-hss">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ibm-bB-KKg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Rx-mY-hss" firstAttribute="leading" secondItem="Ibm-bB-KKg" secondAttribute="leading" id="9vI-Vg-WEJ"/>
+                            <constraint firstItem="8Rx-mY-hss" firstAttribute="trailing" secondItem="Ibm-bB-KKg" secondAttribute="trailing" id="CRm-Gm-zFb"/>
+                            <constraint firstAttribute="bottom" secondItem="8Rx-mY-hss" secondAttribute="bottom" id="Wu4-Rh-KtP"/>
+                            <constraint firstItem="8Rx-mY-hss" firstAttribute="top" secondItem="LLS-0H-0fE" secondAttribute="top" id="sLG-AV-vfb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="8Rx-mY-hss" id="zlH-QQ-p4Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wPN-IH-f3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741" y="110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
