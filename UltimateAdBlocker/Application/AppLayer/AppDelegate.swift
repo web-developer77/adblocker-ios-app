@@ -35,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LoadingViewController()
+        let rootVC = LoadingViewController.instantiate(from: .loading)
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
         
         return true

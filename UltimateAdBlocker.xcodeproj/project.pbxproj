@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45052D0426CAB511008E3BC3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45052D0326CAB511008E3BC3 /* Colors.xcassets */; };
+		45052D5226CAB85D008E3BC3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45052D5126CAB85D008E3BC3 /* UIViewControllerExtension.swift */; };
 		474F7E0D25EFE2C800121668 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F7E0C25EFE2C800121668 /* HelpViewController.swift */; };
 		474F7E1A25EFF05300121668 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F7E1925EFF05300121668 /* TextField.swift */; };
 		474F7E2125EFF31500121668 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F7E2025EFF31500121668 /* EmailValidation.swift */; };
@@ -79,7 +81,7 @@
 		47F9D7ED25EEA7A100F794AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F9D7EC25EEA7A100F794AE /* Assets.xcassets */; };
 		47F9D7F025EEA7A100F794AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F9D7EE25EEA7A100F794AE /* LaunchScreen.storyboard */; };
 		47F9D7FD25EEB7E600F794AE /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9D7FC25EEB7E600F794AE /* CustomTabBarController.swift */; };
-		51BDCB28F4D68F1E7FA7B808 /* Pods_UltimateAdBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A51352C4A364223C960B56 /* Pods_UltimateAdBlocker.framework */; };
+		D87D07C4AE6A9406325792B7 /* Pods_UltimateAdBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E7C94724300193DA73BA9 /* Pods_UltimateAdBlocker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +133,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B800915339C937AA9C3859B /* Pods-UltimateAdBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltimateAdBlocker.release.xcconfig"; path = "Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker.release.xcconfig"; sourceTree = "<group>"; };
+		45052D0326CAB511008E3BC3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		45052D5126CAB85D008E3BC3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		474F7E0C25EFE2C800121668 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		474F7E1925EFF05300121668 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		474F7E2025EFF31500121668 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
@@ -207,8 +210,9 @@
 		47F9D7EF25EEA7A100F794AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47F9D7F125EEA7A100F794AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47F9D7FC25EEB7E600F794AE /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		D4A51352C4A364223C960B56 /* Pods_UltimateAdBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltimateAdBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D88EA65D2C76F16037919767 /* Pods-UltimateAdBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltimateAdBlocker.debug.xcconfig"; path = "Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker.debug.xcconfig"; sourceTree = "<group>"; };
+		4990858A2626D8B0F094D10D /* Pods-UltimateAdBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltimateAdBlocker.debug.xcconfig"; path = "Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker.debug.xcconfig"; sourceTree = "<group>"; };
+		535D7611DA4AF942D3CFA170 /* Pods-UltimateAdBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UltimateAdBlocker.release.xcconfig"; path = "Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker.release.xcconfig"; sourceTree = "<group>"; };
+		822E7C94724300193DA73BA9 /* Pods_UltimateAdBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UltimateAdBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,21 +248,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51BDCB28F4D68F1E7FA7B808 /* Pods_UltimateAdBlocker.framework in Frameworks */,
+				D87D07C4AE6A9406325792B7 /* Pods_UltimateAdBlocker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		25FCBEDF2F6BA4A3461D72AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D4A51352C4A364223C960B56 /* Pods_UltimateAdBlocker.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4742EDC725EEC5BD00BA1BD4 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +289,7 @@
 			children = (
 				47967FD625EEC6DC00E9BCA5 /* Fonts */,
 				47F9D7EC25EEA7A100F794AE /* Assets.xcassets */,
+				45052D0326CAB511008E3BC3 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -501,6 +498,7 @@
 				47967FFA25EECA5100E9BCA5 /* SKProduct.swift */,
 				47967FFB25EECA5100E9BCA5 /* AlertExtension.swift */,
 				474F7E2025EFF31500121668 /* EmailValidation.swift */,
+				45052D5126CAB85D008E3BC3 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,7 +529,8 @@
 				4796801125EEEAA400E9BCA5 /* View */,
 				4796801325EEEAA400E9BCA5 /* Animations */,
 			);
-			path = "LoadingCircle ";
+			name = "LoadingCircle ";
+			path = LoadingCircle;
 			sourceTree = "<group>";
 		};
 		4796800D25EEEAA400E9BCA5 /* Controller */ = {
@@ -756,7 +755,7 @@
 				47B100BF25EFB80A00455830 /* Ads */,
 				47B100D325EFB81600455830 /* Malware */,
 				47B100E825EFB82300455830 /* Tracking */,
-				25FCBEDF2F6BA4A3461D72AF /* Frameworks */,
+				92E9198AEAB6E63420C59BD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -791,11 +790,19 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		92E9198AEAB6E63420C59BD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				822E7C94724300193DA73BA9 /* Pods_UltimateAdBlocker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9ACD795E66CC4B894906EEB3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D88EA65D2C76F16037919767 /* Pods-UltimateAdBlocker.debug.xcconfig */,
-				3B800915339C937AA9C3859B /* Pods-UltimateAdBlocker.release.xcconfig */,
+				4990858A2626D8B0F094D10D /* Pods-UltimateAdBlocker.debug.xcconfig */,
+				535D7611DA4AF942D3CFA170 /* Pods-UltimateAdBlocker.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -875,12 +882,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47F9D7F425EEA7A100F794AE /* Build configuration list for PBXNativeTarget "UltimateAdBlocker" */;
 			buildPhases = (
-				5240695AED79EC799ADCEF42 /* [CP] Check Pods Manifest.lock */,
+				C2E3907A34C3CB9FB9481B1D /* [CP] Check Pods Manifest.lock */,
 				47F9D7DC25EEA79E00F794AE /* Sources */,
 				47F9D7DD25EEA79E00F794AE /* Frameworks */,
 				47F9D7DE25EEA79E00F794AE /* Resources */,
-				F4C58ED6DECFA6BB721D8F15 /* [CP] Embed Pods Frameworks */,
 				47B100B725EFB7FE00455830 /* Embed App Extensions */,
+				132EF5C0C18C0101E831288D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -984,6 +991,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45052D0426CAB511008E3BC3 /* Colors.xcassets in Resources */,
 				47967FE225EEC79B00E9BCA5 /* Roboto-Regular.ttf in Resources */,
 				47F9D7F025EEA7A100F794AE /* LaunchScreen.storyboard in Resources */,
 				47F9D7ED25EEA7A100F794AE /* Assets.xcassets in Resources */,
@@ -998,7 +1006,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5240695AED79EC799ADCEF42 /* [CP] Check Pods Manifest.lock */ = {
+		132EF5C0C18C0101E831288D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2E3907A34C3CB9FB9481B1D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1018,23 +1043,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F4C58ED6DECFA6BB721D8F15 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UltimateAdBlocker/Pods-UltimateAdBlocker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1088,6 +1096,7 @@
 				47967FEF25EEC96E00E9BCA5 /* BlockerTableViewCell.swift in Sources */,
 				47B1009D25EFA4D400455830 /* StringExtension.swift in Sources */,
 				47967FD825EEC6E400E9BCA5 /* Fonts.swift in Sources */,
+				45052D5226CAB85D008E3BC3 /* UIViewControllerExtension.swift in Sources */,
 				4796801E25EEEAA500E9BCA5 /* RotationAnimation.swift in Sources */,
 				4796802225EEEAA500E9BCA5 /* PurchaseView.swift in Sources */,
 				47B100A325EFA4D400455830 /* PushResponseModel.swift in Sources */,
@@ -1458,7 +1467,7 @@
 		};
 		47F9D7F525EEA7A100F794AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D88EA65D2C76F16037919767 /* Pods-UltimateAdBlocker.debug.xcconfig */;
+			baseConfigurationReference = 4990858A2626D8B0F094D10D /* Pods-UltimateAdBlocker.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1481,7 +1490,7 @@
 		};
 		47F9D7F625EEA7A100F794AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B800915339C937AA9C3859B /* Pods-UltimateAdBlocker.release.xcconfig */;
+			baseConfigurationReference = 535D7611DA4AF942D3CFA170 /* Pods-UltimateAdBlocker.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
