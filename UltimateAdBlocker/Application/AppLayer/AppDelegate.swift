@@ -17,10 +17,10 @@ var hasActiveSubscription: Bool {
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate  {
-
-
+    
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Apphud.start(apiKey: "app_BmMnpVp8QdFLBm1ega4yjsmAt24kbx")
@@ -29,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         registerForNotifications()
         
         ADClient.shared().requestAttributionDetails { (data, error) in
-                if let data = data {
-                    Apphud.addAttribution(data: data, from: .appleSearchAds, callback: nil)
-                }
+            if let data = data {
+                Apphud.addAttribution(data: data, from: .appleSearchAds, callback: nil)
             }
+        }
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC = LoadingViewController.instantiate(from: .loading)
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func registerForNotifications(){
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])    { (granted, error) in
-           
+            
         }
         UIApplication.shared.registerForRemoteNotifications()
     }
@@ -53,20 +53,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Apphud.submitPushNotificationsToken(token: deviceToken, callback: nil)
     }
-
+    
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print(error)
     }
-   
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         Apphud.handlePushNotification(apsInfo: response.notification.request.content.userInfo)
         completionHandler()
     }
-
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         Apphud.handlePushNotification(apsInfo: notification.request.content.userInfo)
         completionHandler([])
     }
-
+    
 }
 

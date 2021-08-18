@@ -3,28 +3,26 @@ import UIKit
 
 enum SettingsModel: Int, CustomStringConvertible, CaseIterable {
     
-
-   
+    case ContactUs
     case Terms
     case Privacy
-    case ContactUs
-    case HelpWithSubsctiption
+//    case HelpWithSubsctiption
    
     var description: String {
         switch self {
-        case .HelpWithSubsctiption: return "Help With Subscription"
+//        case .HelpWithSubsctiption: return "Help With Subscription"
         case .Terms: return "Terms of Use"
         case .Privacy: return "Privacy Policy"
-        case .ContactUs: return "Contact Us"
+        case .ContactUs: return "Contact us"
         }
     }
     
     var image: UIImage {
         switch self {
-        case .HelpWithSubsctiption: return UIImage(named: "help") ?? UIImage()
-        case .Terms: return UIImage(named: "terms") ?? UIImage()
-        case .Privacy: return UIImage(named: "privacy") ?? UIImage()
-        case .ContactUs: return UIImage(named: "contact") ?? UIImage()
+//        case .HelpWithSubsctiption: return UIImage(named: "help") ?? UIImage()
+        case .Terms: return UIImage.instantinate(from: .termsImg)
+        case .Privacy: return UIImage.instantinate(from: .privacyImg)
+        case .ContactUs: return UIImage.instantinate(from: .contactImg)
         }
     }
 

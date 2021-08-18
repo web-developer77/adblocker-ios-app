@@ -13,6 +13,9 @@ enum Fonts: String {
     case robotoBold = "Roboto-Bold"
     case robotoRegular = "Roboto-Regular"
     case robotoLight = "Roboto-Light"
+    case montserratBold = "Montserrat-Bold"
+    case montserratSemiBold = "Montserrat-Medium"
+    case montserratRegular = "Montserrat-Regular"
         
     
     func of(size: CGFloat) -> UIFont? {

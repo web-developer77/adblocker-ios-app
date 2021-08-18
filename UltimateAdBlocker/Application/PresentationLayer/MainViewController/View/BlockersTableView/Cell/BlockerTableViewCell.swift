@@ -9,6 +9,10 @@ import UIKit
 import LabelSwitch
 import SafariServices
 
+protocol BlockTableViewCellDelegate {
+    func didChangeSwitch()
+}
+
 class BlockerTableViewCell: UITableViewCell {
     
     //MARK: - Properties
@@ -23,18 +27,28 @@ class BlockerTableViewCell: UITableViewCell {
         }
     }
     
+    var delegate: BlockTableViewCellDelegate?
+    
     //MARK: - Views
     private let iconImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         return image
+    }()
+    
+    private var container: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.instantinate(from: .secondaryYellow)
+        view.layer.cornerRadius = 16.0
+        return view
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Fonts.robotoBold.of(size: 18)
+        label.font = Fonts.montserratSemiBold.of(size: 18)
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .black
@@ -44,7 +58,7 @@ class BlockerTableViewCell: UITableViewCell {
     private let subTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Fonts.robotoLight.of(size: 18)
+        label.font = Fonts.montserratRegular.of(size: 14)
         label.textAlignment = .left
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
@@ -55,21 +69,23 @@ class BlockerTableViewCell: UITableViewCell {
     
     private lazy var swither: LabelSwitch = {
         let ls = LabelSwitchConfig(text: "ON",
-                                   textColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0),
-                                   font: UIFont.boldSystemFont(ofSize: 15),
-                                   backgroundColor: #colorLiteral(red: 0.9960784314, green: 0.8588235294, blue: 0.1607843137, alpha: 1))
+                                   textColor: .white,
+                                   font: Fonts.montserratSemiBold.of(size: 12.0)!,
+                                   backgroundColor: .black)
         
         let rs = LabelSwitchConfig(text: "OFF",
-                                   textColor:  #colorLiteral(red: 0.6196078431, green: 0.6196078431, blue: 0.6196078431, alpha: 1),
-                                   font: UIFont.boldSystemFont(ofSize: 15),
-                                   backgroundColor: #colorLiteral(red: 0.8784313725, green: 0.8784313725, blue: 0.8784313725, alpha: 1))
+                                   textColor:  .white,
+                                   font: Fonts.montserratSemiBold.of(size: 12.0)!,
+                                   backgroundColor: .black)
         
-        let size = CGSize(width: 72, height: 32)
+        let size = CGSize(width: 62, height: 28)
         
         let switcher = LabelSwitch(center: .zero, leftConfig: ls, rightConfig: rs, circlePadding: 0, minimumSize: size, defaultState: .L)
+        switcher.layer.borderWidth = 1.0
+        switcher.layer.borderColor = UIColor.black.cgColor
         switcher.circleShadow = true
         switcher.fullSizeTapEnabled = true
-        switcher.circleColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7)
+        switcher.circleColor = UIColor.instantinate(from: .mainYellow)
         switcher.translatesAutoresizingMaskIntoConstraints = false
         switcher.delegate = self
         
@@ -93,7 +109,7 @@ class BlockerTableViewCell: UITableViewCell {
     //MARK: - Setup Cell
     private func setupCell() {
         layoutCell()
-            
+        
         selectionStyle = .none
         backgroundColor = .clear
         contentView.backgroundColor = .clear
@@ -129,7 +145,7 @@ class BlockerTableViewCell: UITableViewCell {
     
     //MARK: - Layout Cell
     private func layoutCell() {
-        contentView.addSubview(iconImageView)
+        container.addSubview(iconImageView)
         
         let stackView = UIStackView(arrangedSubviews: [titleLabel, subTitleLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -138,19 +154,19 @@ class BlockerTableViewCell: UITableViewCell {
         stackView.spacing = 6
         
         
-        contentView.addSubview(swither)
-        contentView.addSubview(stackView)
+        container.addSubview(swither)
+        container.addSubview(stackView)
         
         iconImageView.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: 60, height: 72))
-            make.centerY.equalTo(contentView.snp.centerY)
-            make.left.equalTo(contentView.snp.left).offset(18)
+            make.size.equalTo(CGSize(width: 40, height: 40))
+            make.centerY.equalTo(container.snp.centerY)
+            make.left.equalTo(container.snp.left).offset(18)
         }
         
         swither.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: 72, height: 32))
-            make.centerY.equalTo(contentView.snp.centerY)
-            make.right.equalTo(contentView.snp.right).offset(-18)
+            make.size.equalTo(CGSize(width: 62, height: 28))
+            make.centerY.equalTo(container.snp.centerY)
+            make.right.equalTo(container.snp.right).offset(-18)
         }
         stackView.snp.makeConstraints { (make) in
             make.centerY.equalTo(iconImageView.snp.centerY)
@@ -158,6 +174,14 @@ class BlockerTableViewCell: UITableViewCell {
             make.right.equalTo(swither.snp.left).offset(-10)
         }
         
+        
+        contentView.addSubview(container)
+        container.snp.makeConstraints { (make) in
+            make.top.equalTo(contentView.snp.top).offset(14.0)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-14.0)
+            make.left.equalTo(contentView.snp.left).offset(0.0)
+            make.right.equalTo(contentView.snp.right).offset(0.0)
+        }
     }
     
 }
@@ -167,11 +191,15 @@ class BlockerTableViewCell: UITableViewCell {
 extension BlockerTableViewCell: LabelSwitchDelegate {
     func switchChangToState(sender: LabelSwitch) {
         guard let data = self.data else { return}
-        switch sender.curState {
-        case .L: sharedUserDeafults?.set(false, forKey: data.key)
-        case .R: sharedUserDeafults?.set(true, forKey: data.key)
+        if hasActiveSubscription {
+            switch sender.curState {
+            case .L: sharedUserDeafults?.set(false, forKey: data.key)
+            case .R: sharedUserDeafults?.set(true, forKey: data.key)
+            }
+            
+            SFContentBlockerManager.reloadContentBlocker(withIdentifier: data.bundle, completionHandler: nil)
+        } else {
+            delegate?.didChangeSwitch()
         }
-        
-        SFContentBlockerManager.reloadContentBlocker(withIdentifier: data.bundle, completionHandler: nil)
     }
 }

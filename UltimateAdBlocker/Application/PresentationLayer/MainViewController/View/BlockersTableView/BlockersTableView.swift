@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol BlockersTableViewDelegate {
+    func didSelectBlocker()
+}
+
 class BlockersTableView: UITableView {
 
     //MARK: - Properties
     private let data = BlockerModel.defaultBlockers
     
+    var blockerDelegate: BlockersTableViewDelegate?
     
     //MARK: - Constructor
     override init(frame: CGRect, style: UITableView.Style) {
@@ -28,11 +33,10 @@ class BlockersTableView: UITableView {
     private func setupTable() {
         translatesAutoresizingMaskIntoConstraints = false
         
-        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        backgroundColor = .clear
         isScrollEnabled = false
         
-        separatorColor = #colorLiteral(red: 0.2196078431, green: 0.3098039216, blue: 0.4901960784, alpha: 0.5)
-        separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+        separatorStyle = .none
   
         tableFooterView = UIView()
         
@@ -41,7 +45,6 @@ class BlockersTableView: UITableView {
         delegate = self
         dataSource = self
         
-        layer.cornerRadius = 30
         layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         layer.shadowOffset = .zero
         layer.shadowOpacity = 0.5
@@ -72,12 +75,14 @@ extension BlockersTableView: UITableViewDataSource {
         
         let rowData = data[indexPath.row]
         cell.data = rowData
-
+        cell.delegate = self
         return cell
     }
     
-    
-    
-    
-    
+}
+
+extension BlockersTableView: BlockTableViewCellDelegate {
+    func didChangeSwitch() {
+        self.blockerDelegate?.didSelectBlocker()
+    }
 }

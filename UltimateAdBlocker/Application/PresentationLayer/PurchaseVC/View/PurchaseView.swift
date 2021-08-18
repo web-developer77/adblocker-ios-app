@@ -14,7 +14,7 @@ class PurchaseView: UIView {
         }
         
         indicator.isUserInteractionEnabled = true
-        indicator.color = #colorLiteral(red: 0.9960784314, green: 0.8588235294, blue: 0.1607843137, alpha: 1)
+        indicator.color = .white
         indicator.hidesWhenStopped = true
         indicator.startAnimating()
         return indicator
@@ -23,9 +23,9 @@ class PurchaseView: UIView {
     private let subscribeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Subscribe".uppercased()
-        label.font = Fonts.robotoRegular.of(size: 22)
-        label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        label.text = "Unlock Full Version".uppercased()
+        label.font = Fonts.montserratSemiBold.of(size: 20)
+        label.textColor = .black
         label.textAlignment = .center
         return label
     }()
@@ -33,8 +33,8 @@ class PurchaseView: UIView {
     let priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Fonts.robotoRegular.of(size: 15)
-        label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        label.font = Fonts.montserratSemiBold.of(size: 20)
+        label.textColor = .black
         label.textAlignment = .center
         return label
     }()
@@ -52,17 +52,14 @@ class PurchaseView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.layer.cornerRadius = 30
-        self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        self.layer.shadowOpacity = 0.4
-        self.layer.shadowOffset = .zero
         self.layer.shadowRadius = 10
         
     }
     
     //MARK: SetupView
     private func setupView() {
-        backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.1137254902, blue: 0.1803921569, alpha: 1)
+        backgroundColor = UIColor.instantinate(from: .mainYellow)
+        layer.cornerRadius = 12.0
         layoutView()
         showIndicator()
         self.translatesAutoresizingMaskIntoConstraints = false

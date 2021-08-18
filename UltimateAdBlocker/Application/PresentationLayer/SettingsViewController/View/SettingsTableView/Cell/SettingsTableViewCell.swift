@@ -25,14 +25,22 @@ class SettingsTableViewCell: UITableViewCell {
     private let iconImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         return image
+    }()
+    
+    private let container: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 12.0
+        view.backgroundColor = UIColor.instantinate(from: .secondaryYellow)
+        return view
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Fonts.robotoBold.of(size: 18)
+        label.font = Fonts.montserratSemiBold.of(size: 20)
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .black
@@ -62,9 +70,6 @@ class SettingsTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        iconImageView.layer.cornerRadius = 12
-        iconImageView.clipsToBounds = true
     }
     
     
@@ -78,21 +83,30 @@ class SettingsTableViewCell: UITableViewCell {
     
     //MARK: - Layout Cell
     private func layoutCell() {
-        contentView.addSubview(iconImageView)
-        contentView.addSubview(titleLabel)
+        contentView.addSubview(container)
+        container.addSubview(iconImageView)
+        container.addSubview(titleLabel)
         
         
         iconImageView.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: 60, height: 72))
-            make.centerY.equalTo(contentView.snp.centerY)
-            make.left.equalTo(contentView.snp.left).offset(18)
+            make.size.equalTo(CGSize(width: 30, height: 30))
+            make.centerY.equalTo(container.snp.centerY)
+            make.left.equalTo(container.snp.left).offset(18)
+            make.top.equalTo(container.snp.top).offset(24.0)
         }
         
         
         titleLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(iconImageView.snp.centerY)
             make.left.equalTo(iconImageView.snp.right).offset(18)
-            make.right.equalTo(contentView.snp.right).offset(-10)
+            make.right.equalTo(container.snp.right).offset(-10)
+        }
+        
+        container.snp.makeConstraints { (make) in
+            make.centerY.equalTo(contentView.snp.centerY)
+            make.centerX.equalTo(contentView.snp.centerX)
+            make.top.equalTo(contentView.snp.top).offset(15.0)
+            make.leading.equalTo(contentView.snp.leading)
         }
         
     }

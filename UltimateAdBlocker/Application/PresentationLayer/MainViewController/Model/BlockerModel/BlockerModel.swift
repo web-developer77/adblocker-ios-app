@@ -16,9 +16,9 @@ struct BlockerModel {
 //MARK: - Default
 extension BlockerModel {
     static let defaultBlockers = [
-        BlockerModel(title: "Porn Blocker", subTitle: "Blocks adult content", imageName: "pornImage", key: SharedUserDeafults.Keys.pornBlockerState, bundle: AppConstants.pornBlokerBundle),
-        BlockerModel(title: "Ad Blocker", subTitle: "Blocks annoying ads", imageName: "adsImage", key: SharedUserDeafults.Keys.adsBlockerState, bundle: AppConstants.adsBlockerBundle),
-        BlockerModel(title: "Tracking Blocker", subTitle: "Don't let track you", imageName: "trackImage", key: SharedUserDeafults.Keys.trackBlockerState, bundle: AppConstants.trackBlockerBundle),
-        BlockerModel(title: "Malware Blocker", subTitle: "Protect yourself", imageName: "malwareImage", key: SharedUserDeafults.Keys.malwareBlockerState, bundle: AppConstants.malwareBlockerBundle),
+        BlockerModel(title: "Stop ads", subTitle: "Disable useless ads", imageName: "ic_stop_ad", key: SharedUserDeafults.Keys.adsBlockerState, bundle: AppConstants.adsBlockerBundle),
+        BlockerModel(title: "Block Porn", subTitle: "Make browsing safe for kids", imageName: "ic_block_porn", key: SharedUserDeafults.Keys.pornBlockerState, bundle: AppConstants.pornBlokerBundle),
+        BlockerModel(title: "Block Viruses", subTitle: "Disable useless ads", imageName: "ic_block_virus", key: SharedUserDeafults.Keys.malwareBlockerState, bundle: AppConstants.malwareBlockerBundle),
+        BlockerModel(title: "Stop Tracking", subTitle: "Make websites respeect privacy", imageName: "ic_stop_tracking", key: SharedUserDeafults.Keys.trackBlockerState, bundle: AppConstants.trackBlockerBundle),
     ]
 }

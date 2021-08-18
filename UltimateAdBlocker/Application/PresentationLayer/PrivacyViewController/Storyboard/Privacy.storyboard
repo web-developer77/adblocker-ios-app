@@ -46,7 +46,7 @@
         <!--Privacy View Controller-->
         <scene sceneID="szU-Mx-dAU">
             <objects>
-                <viewController id="oDJ-dE-c8r" customClass="PrivacyViewController" customModule="UltimateAdBlocker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivacyViewController" id="oDJ-dE-c8r" customClass="PrivacyViewController" customModule="UltimateAdBlocker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LLS-0H-0fE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

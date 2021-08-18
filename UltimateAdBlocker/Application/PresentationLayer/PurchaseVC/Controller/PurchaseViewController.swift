@@ -13,8 +13,8 @@ class PurchaseViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Privacy Policy", for: .normal)
-        button.titleLabel?.font = Fonts.robotoRegular.of(size: 20)
-        button.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.231372549, alpha: 1), for: .normal)
+        button.titleLabel?.font = Fonts.montserratRegular.of(size: 14)
+        button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.lightGray, for: .highlighted)
         button.addTarget(self, action: #selector(showWebView), for: .touchUpInside)
         return button
@@ -24,8 +24,8 @@ class PurchaseViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Terms Of Use", for: .normal)
-        button.titleLabel?.font = Fonts.robotoRegular.of(size: 20)
-        button.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.231372549, alpha: 1), for: .normal)
+        button.titleLabel?.font = Fonts.montserratRegular.of(size: 14)
+        button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.lightGray, for: .highlighted)
         button.addTarget(self, action: #selector(showWebView), for: .touchUpInside)
         return button
@@ -34,9 +34,9 @@ class PurchaseViewController: UIViewController {
     private let closeButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "closeButton"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
-        button.adjustsImageWhenHighlighted = false
+        button.titleLabel?.font = Fonts.montserratSemiBold.of(size: 20)
+        button.setTitle("Close", for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         button.backgroundColor = .clear
         return button
@@ -46,50 +46,37 @@ class PurchaseViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Restore", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-        button.titleLabel?.font = Fonts.robotoRegular.of(size: 20)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = Fonts.montserratSemiBold.of(size: 20)
         button.addTarget(self, action: #selector(restoreButtonTapped), for: .touchUpInside)
         button.backgroundColor = .clear
         return button
     }()
     
-    private let topImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "logo")
-        return image
-    }()
-    
-    private let descriptionImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "info1")
-        return image
-    }()
-    
-    private let backImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "backgroundPuschase")
-        return image
-    }()
-    
-    
-    private let descriptionLabel: UILabel = {
+    let titleLB: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Subscription automatically renews"
-        label.font = Fonts.robotoRegular.of(size: 18)
-        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.text = "Premium Features"
+        label.font = Fonts.montserratSemiBold.of(size: 28)
+        label.textColor = UIColor.instantinate(from: .mainYellow)
         label.textAlignment = .center
-        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
- 
+//    let tableView: UITableView = {
+//        let view = UITableView()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.backgroundColor = .clear
+//        view.isScrollEnabled = false
+//        view.separatorStyle = .none
+//        view.register(PremiumInfoTableViewCell.self, forCellReuseIdentifier: PremiumInfoTableViewCell.identifier)
+//        view.allowsMultipleSelection = false
+//        view.allowsSelection = false
+//        return view
+//    }()
+    
+    private let tableView = PremiumTabelView()
+    
     private let purchaseView = PurchaseView()
     
     private var appHudProduct: ApphudProduct?
@@ -116,7 +103,7 @@ class PurchaseViewController: UIViewController {
     
     //MARK: - Setup View
     private func setupView() {
-        view.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.8588235294, blue: 0.1607843137, alpha: 1)
+        view.backgroundColor = .black
         layout()
         
     }
@@ -132,13 +119,6 @@ class PurchaseViewController: UIViewController {
         } else {
             presentWebView(link: AppConstants.terms)
         }
-    }
-    
-    private func presentMainView() {
-        let vc = UINavigationController(rootViewController: MainViewController())
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true, completion: nil)
     }
     
     private func presentWebView(link: String) {
@@ -211,51 +191,42 @@ class PurchaseViewController: UIViewController {
     
     //MARK: - Layout
     private func layout() {
-        view.addSubview(descriptionImageView)
         view.addSubview(closeButton)
         view.addSubview(restoreButton)
         view.addSubview(showPrivacyButton)
         view.addSubview(showTermsButton)
         view.addSubview(purchaseView)
-        view.addSubview(descriptionLabel)
-        
-    
+        view.addSubview(titleLB)
+        view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            closeButton.widthAnchor.constraint(equalToConstant: 30),
-            closeButton.heightAnchor.constraint(equalToConstant: 30),
             closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             
             restoreButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             restoreButton.centerYAnchor.constraint(equalTo: closeButton.centerYAnchor),
             
-            descriptionImageView.heightAnchor.constraint(equalToConstant: self.view.bounds.size.height * 0.4),
-            descriptionImageView.widthAnchor.constraint(equalToConstant: self.view.bounds.size.width - 60),
-            descriptionImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            descriptionImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            titleLB.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 30),
+            titleLB.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
             showPrivacyButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
-            showPrivacyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            showPrivacyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             showTermsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
-            showTermsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            showTermsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
-            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            descriptionLabel.bottomAnchor.constraint(equalTo: showTermsButton.topAnchor, constant: -30),
+            purchaseView.heightAnchor.constraint(equalToConstant: 57),
+            purchaseView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
+            purchaseView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+            purchaseView.bottomAnchor.constraint(equalTo: showPrivacyButton.topAnchor, constant: -60),
             
-            purchaseView.heightAnchor.constraint(equalToConstant: 80),
-            purchaseView.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -5),
-            purchaseView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            purchaseView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            
-           
+            tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tableView.topAnchor.constraint(equalTo: titleLB.bottomAnchor, constant: 25),
+            tableView.bottomAnchor.constraint(equalTo: purchaseView.topAnchor, constant: -40),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15)
         ])
     }
 }
-
-
 
 //MARK: - Extensions
 extension PurchaseViewController {
@@ -299,4 +270,7 @@ extension PurchaseViewController {
     }
     
 }
+
+
+
 

@@ -6,21 +6,21 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct ActivateModel {
     
     let text: String
-    let imageName: String
+    let image: UIImage
 }
 
 
 extension ActivateModel {
     static let defaultModel = [
-        ActivateModel(text: "OPEN SETTINGS", imageName: "1a"),
-        ActivateModel(text: "OPEN SAFARI SETTINGS", imageName: "2a"),
-        ActivateModel(text: "SEARCH FOR CONTENT BLOCKERS", imageName: "3a"),
-        ActivateModel(text: "ALLOW ALL CONTENT BLOCKERS", imageName: "4a"),
+        ActivateModel(text: "Open Settings", image: UIImage.instantinate(from: .settimgImg)),
+        ActivateModel(text: "Open Safari Settings", image: UIImage.instantinate(from: .safariImg)),
+        ActivateModel(text: "Search For Content \nBlockers", image: UIImage.instantinate(from: .secureImg)),
+//        ActivateModel(text: "ALLOW ALL CONTENT BLOCKERS", imageName: "4a"),
     ]
     
 }

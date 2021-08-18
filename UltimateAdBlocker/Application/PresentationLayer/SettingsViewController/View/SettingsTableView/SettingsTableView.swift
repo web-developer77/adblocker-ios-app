@@ -20,22 +20,15 @@ class SettingsTableView: UITableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        layer.cornerRadius = 30
-        layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        layer.shadowOffset = .zero
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = 8
     }
     
     //MARK: - Setup Table
     private func setupTable() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        backgroundColor = .clear
         isScrollEnabled = false
         
-        separatorColor = #colorLiteral(red: 0.2196078431, green: 0.3098039216, blue: 0.4901960784, alpha: 0.5)
-        separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+        separatorStyle = .none
   
         tableFooterView = UIView()
         
@@ -51,7 +44,7 @@ class SettingsTableView: UITableView {
 extension SettingsTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.size.height/CGFloat(SettingsModel.allCases.count)
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

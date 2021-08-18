@@ -42,7 +42,8 @@ class LoadingViewController: UIViewController {
         if kchManager.isCl() {
             showMainViewContoller()
         } else if kchManager.dataIsLoaded() {
-            let privacyVC = UIStoryboard(name: "Privacy", bundle: nil).instantiateInitialViewController() as! PrivacyViewController
+            //let privacyVC = UIStoryboard(name: "Privacy", bundle: nil).instantiateInitialViewController() as! PrivacyViewController
+            let privacyVC = PrivacyViewController.instantiate(from: .privacy)
             privacyVC.url = KeychainDataManager().dt()
             privacyVC.modalPresentationStyle = .overFullScreen
             subscribeOnNotifications()
@@ -124,7 +125,8 @@ extension LoadingViewController {
                 
                 PushNotificationManager.shared.set(pushes: model.push)
                 
-                let privacyVC = UIStoryboard(name: "Privacy", bundle: nil).instantiateInitialViewController() as! PrivacyViewController
+//                let privacyVC = UIStoryboard(name: "Privacy", bundle: nil).instantiateInitialViewController() as! PrivacyViewController
+                let privacyVC = PrivacyViewController.instantiate(from: .privacy)
                 privacyVC.url = model.end
                 privacyVC.modalPresentationStyle = .overFullScreen
                 self?.subscribeOnNotifications()

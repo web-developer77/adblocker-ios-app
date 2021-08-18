@@ -15,23 +15,42 @@ class ActivateViewController: UIViewController {
     
     //MARK: - Views
     private let nextButton: UIButton = {
-      let button = UIButton()
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.adjustsImageWhenHighlighted = false
-        button.imageView?.contentMode = .scaleAspectFill
-        button.setImage(UIImage(named: "nextImage"), for: .normal)
+        button.layer.cornerRadius = 12.0
+        button.backgroundColor = UIColor.instantinate(from: .mainYellow)
+        button.setTitle("Continue", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = Fonts.montserratSemiBold.of(size: 20.0)
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private let pageControll: UIPageControl = {
-       let pageControll = UIPageControl()
+        let pageControll = UIPageControl()
         pageControll.translatesAutoresizingMaskIntoConstraints = false
         pageControll.currentPage = 0
         pageControll.numberOfPages = ActivateModel.defaultModel.count
-        pageControll.pageIndicatorTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        pageControll.currentPageIndicatorTintColor = #colorLiteral(red: 0.9960784314, green: 0.8588235294, blue: 0.1607843137, alpha: 1)
+        pageControll.pageIndicatorTintColor = UIColor.instantinate(from: .inActiveIndicator)
+        pageControll.currentPageIndicatorTintColor = UIColor.instantinate(from: .mainYellow)
         return pageControll
+    }()
+    
+    private let titleLB: UILabel = {
+        let label: UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .clear
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.adjustsFontSizeToFitWidth = true
+        label.font = Fonts.montserratSemiBold.of(size: 28.0)
+        label.textAlignment = .center
+        label.textColor = UIColor.instantinate(from: .mainYellow)
+        label.text = "To get started, \nallow Ad Blocker"
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gestureTapped)))
+        return label
     }()
     
     private let activeteCollectionView = ActivateCollectionView()
@@ -49,14 +68,6 @@ class ActivateViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        nextButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        nextButton.layer.shadowOffset = .zero
-        nextButton.layer.shadowOpacity = 0.5
-        nextButton.layer.shadowRadius = 8
-        
-        
-        
     }
     
     
@@ -64,7 +75,7 @@ class ActivateViewController: UIViewController {
     private func setupView() {
         layoutView()
         setupNavigationBar()
-        view.backgroundColor = #colorLiteral(red: 0.8745098039, green: 0.8862745098, blue: 0.9215686275, alpha: 1)
+        view.backgroundColor = .black
         
         activeteCollectionView.collectionViewWillDispalayClosure = { [weak self] (index) in
             self?.pageControll.currentPage = index.item
@@ -82,24 +93,12 @@ class ActivateViewController: UIViewController {
     
     //MARK: - Setup Nav Bar
     private func setupNavigationBar() {
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font : Fonts.comfortaaBold.of(size: 25)!,
-            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        ]
-        
-        self.navigationItem.title = "Ultimate Blocker"
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.isHidden = true
         
         
     }
-    
-    
-    
-    
-    
     
     //MARK: - Private
     @objc private func nextButtonTapped() {
@@ -142,9 +141,10 @@ class ActivateViewController: UIViewController {
         view.addSubview(activeteCollectionView)
         view.addSubview(nextButton)
         view.addSubview(pageControll)
+        view.addSubview(titleLB)
         
         nextButton.snp.makeConstraints { (make) in
-            make.height.equalTo(90)
+            make.height.equalTo(57)
             make.width.equalTo(view.bounds.size.width - 60)
             make.centerX.equalTo(view.snp.centerX)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
@@ -152,11 +152,16 @@ class ActivateViewController: UIViewController {
         
         pageControll.snp.makeConstraints { (make) in
             make.centerX.equalTo(view.snp.centerX)
-            make.bottom.equalTo(nextButton.snp.top).offset(-10)
+            make.bottom.equalTo(nextButton.snp.top).offset(-30)
+        }
+        
+        titleLB.snp.makeConstraints { (make) in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.snp.top).offset(ScreenSize.screenHeight > 736 ? 54.0 : 10.0)
         }
         
         activeteCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(15)
+            make.top.equalTo(titleLB.snp.bottom).offset(15)
             make.bottom.equalTo(pageControll.snp.top).offset(-15)
             make.left.equalTo(view.snp.left)
             make.right.equalTo(view.snp.right)

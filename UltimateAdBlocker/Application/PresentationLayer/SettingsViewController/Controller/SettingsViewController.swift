@@ -32,8 +32,8 @@ class SettingsViewController: UIViewController {
     private func setupNavigationBar() {
         
         self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font : Fonts.comfortaaBold.of(size: 25)!,
-            NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            NSAttributedString.Key.font : Fonts.montserratSemiBold.of(size: 28.0)!,
+            NSAttributedString.Key.foregroundColor : UIColor.instantinate(from: .mainYellow)
         ]
         
         self.navigationItem.title = "Settings"
@@ -47,12 +47,12 @@ class SettingsViewController: UIViewController {
     //MARK: - SetupView
     private func setupView() {
         layoutView()
-        view.backgroundColor = #colorLiteral(red: 0.8745098039, green: 0.8862745098, blue: 0.9215686275, alpha: 1)
+        view.backgroundColor = .black
         
         settingTableView.didSelectRow = { [weak self] (option) in
             switch option {
             case .ContactUs: self?.presentMail()
-            case .HelpWithSubsctiption: self?.showHelpViewController()
+//            case .HelpWithSubsctiption: self?.showHelpViewController()
             case .Privacy: self?.presentWebVC(url: AppConstants.privacy)
             case .Terms: self?.presentWebVC(url: AppConstants.terms)
             }
@@ -113,8 +113,7 @@ class SettingsViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(15)
             make.left.equalTo(view.snp.left).offset(30)
             make.right.equalTo(view.snp.right).offset(-30)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
-        }
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)        }
     }
 
   

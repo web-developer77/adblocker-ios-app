@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		45052D0426CAB511008E3BC3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45052D0326CAB511008E3BC3 /* Colors.xcassets */; };
 		45052D5226CAB85D008E3BC3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45052D5126CAB85D008E3BC3 /* UIViewControllerExtension.swift */; };
+		4529B0A326CBB6C400278FDE /* PremiumInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B0A226CBB6C400278FDE /* PremiumInfoModel.swift */; };
+		4529B0AF26CBC09A00278FDE /* PremiumTabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B0AE26CBC09A00278FDE /* PremiumTabelView.swift */; };
+		4529B0B626CBC17B00278FDE /* PremiumInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B0B526CBC17B00278FDE /* PremiumInfoTableViewCell.swift */; };
+		454A5C9726CAF3AC00C3A70C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A5C9626CAF3AC00C3A70C /* UIColorExtension.swift */; };
+		454A5CA826CAFD8100C3A70C /* UIImageExtetnsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A5CA726CAFD8100C3A70C /* UIImageExtetnsion.swift */; };
+		454A5CBD26CB0B9300C3A70C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454A5CAF26CB070500C3A70C /* Montserrat-Bold.ttf */; };
+		454A5CC326CB0B9700C3A70C /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454A5CAE26CB070500C3A70C /* Montserrat-Medium.ttf */; };
+		454A5CC926CB0B9A00C3A70C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 454A5CB026CB070500C3A70C /* Montserrat-Regular.ttf */; };
 		474F7E0D25EFE2C800121668 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F7E0C25EFE2C800121668 /* HelpViewController.swift */; };
 		474F7E1A25EFF05300121668 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F7E1925EFF05300121668 /* TextField.swift */; };
 		474F7E2125EFF31500121668 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F7E2025EFF31500121668 /* EmailValidation.swift */; };
@@ -135,6 +143,14 @@
 /* Begin PBXFileReference section */
 		45052D0326CAB511008E3BC3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		45052D5126CAB85D008E3BC3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4529B0A226CBB6C400278FDE /* PremiumInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoModel.swift; sourceTree = "<group>"; };
+		4529B0AE26CBC09A00278FDE /* PremiumTabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTabelView.swift; sourceTree = "<group>"; };
+		4529B0B526CBC17B00278FDE /* PremiumInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoTableViewCell.swift; sourceTree = "<group>"; };
+		454A5C9626CAF3AC00C3A70C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		454A5CA726CAFD8100C3A70C /* UIImageExtetnsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtetnsion.swift; sourceTree = "<group>"; };
+		454A5CAE26CB070500C3A70C /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		454A5CAF26CB070500C3A70C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		454A5CB026CB070500C3A70C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		474F7E0C25EFE2C800121668 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		474F7E1925EFF05300121668 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		474F7E2025EFF31500121668 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
@@ -255,6 +271,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4529B0A126CBB6AA00278FDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4529B0A226CBB6C400278FDE /* PremiumInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4742EDC725EEC5BD00BA1BD4 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +465,9 @@
 		47967FD625EEC6DC00E9BCA5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				454A5CAF26CB070500C3A70C /* Montserrat-Bold.ttf */,
+				454A5CAE26CB070500C3A70C /* Montserrat-Medium.ttf */,
+				454A5CB026CB070500C3A70C /* Montserrat-Regular.ttf */,
 				47967FDD25EEC79B00E9BCA5 /* Roboto-Bold.ttf */,
 				47967FDE25EEC79B00E9BCA5 /* Roboto-Light.ttf */,
 				47967FDF25EEC79B00E9BCA5 /* Roboto-Regular.ttf */,
@@ -499,6 +526,8 @@
 				47967FFB25EECA5100E9BCA5 /* AlertExtension.swift */,
 				474F7E2025EFF31500121668 /* EmailValidation.swift */,
 				45052D5126CAB85D008E3BC3 /* UIViewControllerExtension.swift */,
+				454A5C9626CAF3AC00C3A70C /* UIColorExtension.swift */,
+				454A5CA726CAFD8100C3A70C /* UIImageExtetnsion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -514,6 +543,7 @@
 		4796800B25EEEAA400E9BCA5 /* PurchaseVC */ = {
 			isa = PBXGroup;
 			children = (
+				4529B0A126CBB6AA00278FDE /* Model */,
 				4796800C25EEEAA400E9BCA5 /* LoadingCircle  */,
 				4796801725EEEAA500E9BCA5 /* Controller */,
 				4796801925EEEAA500E9BCA5 /* View */,
@@ -579,6 +609,8 @@
 			isa = PBXGroup;
 			children = (
 				4796801A25EEEAA500E9BCA5 /* PurchaseView.swift */,
+				4529B0AE26CBC09A00278FDE /* PremiumTabelView.swift */,
+				4529B0B526CBC17B00278FDE /* PremiumInfoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -991,6 +1023,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454A5CC926CB0B9A00C3A70C /* Montserrat-Regular.ttf in Resources */,
+				454A5CBD26CB0B9300C3A70C /* Montserrat-Bold.ttf in Resources */,
 				45052D0426CAB511008E3BC3 /* Colors.xcassets in Resources */,
 				47967FE225EEC79B00E9BCA5 /* Roboto-Regular.ttf in Resources */,
 				47F9D7F025EEA7A100F794AE /* LaunchScreen.storyboard in Resources */,
@@ -999,6 +1033,7 @@
 				47967FE125EEC79B00E9BCA5 /* Roboto-Light.ttf in Resources */,
 				47967FE025EEC79B00E9BCA5 /* Roboto-Bold.ttf in Resources */,
 				47967FDB25EEC70100E9BCA5 /* Comfortaa-Bold.ttf in Resources */,
+				454A5CC326CB0B9700C3A70C /* Montserrat-Medium.ttf in Resources */,
 				47B1009E25EFA4D400455830 /* Loading.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1117,20 +1152,25 @@
 				4776E5FB25EF9B3B00DF9484 /* SettingsTableViewCell.swift in Sources */,
 				47B100A225EFA4D400455830 /* KeychainDataManager.swift in Sources */,
 				47B100A025EFA4D400455830 /* PushNotificationManager.swift in Sources */,
+				4529B0AF26CBC09A00278FDE /* PremiumTabelView.swift in Sources */,
 				47967FFE25EECA5100E9BCA5 /* AlertExtension.swift in Sources */,
 				47B1009C25EFA4D400455830 /* PrivacyViewController.swift in Sources */,
 				47967FF525EECA1800E9BCA5 /* SharedUserDeafault.swift in Sources */,
 				47967FFC25EECA5100E9BCA5 /* UIDeviceType.swift in Sources */,
+				454A5C9726CAF3AC00C3A70C /* UIColorExtension.swift in Sources */,
 				4796802025EEEAA500E9BCA5 /* StrokeAnimation.swift in Sources */,
 				4796801C25EEEAA500E9BCA5 /* LoadingShapeLayer.swift in Sources */,
 				47F9D7E425EEA79E00F794AE /* AppDelegate.swift in Sources */,
+				4529B0A326CBB6C400278FDE /* PremiumInfoModel.swift in Sources */,
 				47F9D7FD25EEB7E600F794AE /* CustomTabBarController.swift in Sources */,
 				474F7E0D25EFE2C800121668 /* HelpViewController.swift in Sources */,
+				4529B0B626CBC17B00278FDE /* PremiumInfoTableViewCell.swift in Sources */,
 				4796801D25EEEAA500E9BCA5 /* LoadingCircleView.swift in Sources */,
 				4776E5E325EF8A8200DF9484 /* ActivateCollectionViewCell.swift in Sources */,
 				474F7E2125EFF31500121668 /* EmailValidation.swift in Sources */,
 				47967FFD25EECA5100E9BCA5 /* SKProduct.swift in Sources */,
 				4776E5EC25EF99B300DF9484 /* SettingsViewController.swift in Sources */,
+				454A5CA826CAFD8100C3A70C /* UIImageExtetnsion.swift in Sources */,
 				4796802125EEEAA500E9BCA5 /* PurchaseViewController.swift in Sources */,
 				4776E5E925EF91B100DF9484 /* ActivateViewController.swift in Sources */,
 			);
@@ -1473,8 +1513,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UltimateAdBlocker/UltimateAdBlocker.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZM4C49QR5V;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/UltimateAdBlocker/Application/AppLayer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1483,6 +1523,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.UltimateAdBlocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1496,8 +1537,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UltimateAdBlocker/UltimateAdBlocker.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZM4C49QR5V;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/UltimateAdBlocker/Application/AppLayer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1506,6 +1547,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.UltimateAdBlocker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

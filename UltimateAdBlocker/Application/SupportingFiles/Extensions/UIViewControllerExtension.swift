@@ -12,6 +12,7 @@ extension UIViewController {
     
     enum StoryboardName: String {
         case loading = "Loading"
+        case privacy = "Privacy"
     }
     
     class func instantiate(from storyboard: StoryboardName) -> Self {

@@ -26,7 +26,7 @@ class ActivateCollectionViewCell: UICollectionViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.text = "To get started, \nallow Ad Blocker"
+        label.text = ""
         label.numberOfLines = 2
         label.textAlignment = .center
         if DeviceType.iPhone8 || DeviceType.iPhoneSE {
@@ -48,9 +48,9 @@ class ActivateCollectionViewCell: UICollectionViewCell {
     private let buttomDescriptionLabel: UILabel = {
       let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Fonts.robotoBold.of(size: 20)
+        label.font = Fonts.montserratSemiBold.of(size: 20)
         label.textAlignment = .center
-        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.textColor = .white
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         return label
@@ -89,7 +89,7 @@ class ActivateCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Configure Cell
     private func configureCell(with data: ActivateModel) {
-        imageView.image = UIImage(named: data.imageName)
+        imageView.image = data.image
         buttomDescriptionLabel.text = data.text
     }
     
